@@ -15,14 +15,12 @@ class ProductDetails extends React.Component {
     render() {
         return (
             <div>
-
                 <div>
                     <Brief />
                 </div>
                 <div>
                     <Summary />
                 </div>
-
             </div>
         );
     }
