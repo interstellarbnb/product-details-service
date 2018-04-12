@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Brief from './components/Brief.jsx';
+import Summary from './components/Summary.jsx';
 
 class ProductDetails extends React.Component {
     constructor(props) {
@@ -18,7 +19,10 @@ class ProductDetails extends React.Component {
                 <div>
                     <Brief />
                 </div>
-                
+                <div>
+                    <Summary />
+                </div>
+
             </div>
         );
     }
