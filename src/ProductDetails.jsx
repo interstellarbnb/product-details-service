@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Basics from './components/Basics.jsx';
+import Brief from './components/Brief.jsx';
 import Summary from './components/Summary.jsx';
 
 class ProductDetails extends React.Component {
@@ -15,12 +15,14 @@ class ProductDetails extends React.Component {
     render() {
         return (
             <div>
+
                 <div>
-                    <Basics />
+                    <Brief />
                 </div>
                 <div>
-                   <Summary />
+                    <Summary />
                 </div>
+
             </div>
         );
     }
