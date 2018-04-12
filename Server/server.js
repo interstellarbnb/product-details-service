@@ -2,12 +2,14 @@ const express = require('express');
 const db = require('../database/database.js');
 const app = express();
 
+app.use(express.static('../dist'));
+
 app.get('/', (req, res) => {
-    db.find((data) => {
-        console.log('here data...');
-        console.log(data);
-        res.end(JSON.stringify(data));
-    })
+    // db.find((data) => {
+    //     return
+    //     res.end(200);
+    // })
+    res.sendStatus(200).end();
 });
 
 app.listen(3003, () => {

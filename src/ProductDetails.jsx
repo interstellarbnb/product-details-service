@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Basics from './components/Basics.jsx'
+import Basics from './components/Basics.jsx';
+import Summary from './components/Summary.jsx';
 
 class ProductDetails extends React.Component {
     constructor(props) {
@@ -14,7 +15,12 @@ class ProductDetails extends React.Component {
     render() {
         return (
             <div>
-                <Basics />
+                <div>
+                    <Basics />
+                </div>
+                <div>
+                   <Summary />
+                </div>
             </div>
         );
     }
