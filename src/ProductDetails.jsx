@@ -1,29 +1,54 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Brief from './components/Brief.jsx';
-import Summary from './components/Summary.jsx';
+import axios from 'axios';
+import Brief from './components/Brief';
+import Summary from './components/Summary';
 
 class ProductDetails extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
+    this.state = { 
+      brief: [],
+    };
+  }
 
-        this.state = {
-            
-        }
-    }
+  componentDidMount() {
+    this.getData();
+  }
 
-    render() {
-        return (
-            <div>
-                <div>
-                    <Brief />
-                </div>
-                <div>
-                    <Summary />
-                </div>
-            </div>
-        );
-    }
+  getData = () => {
+    // Append id end of url to receive desired db entry
+    // ID's range from 0 - 99
+    axios.get('http://127.0.0.1:3003/0')
+      .then((res) =>
+        this.setState({
+          brief: {
+            'type': res.data.spaceType,
+            'title': res.data.spaceTitle,
+            'location': res.data. spaceLoc,
+            'numGuests': res.data.numGuests,
+            'numBedrooms': res.data.numBedrooms,
+            'numBeds': res.data.numBeds,
+            'numBaths': res.data.numBaths,
+          }
+        })
+      )
+      .catch((err) =>
+        console.log(err)
+      );
+  }
+
+
+  render() {
+    return (
+      <div>
+        <div>
+          <Brief info={this.state.brief} />
+        </div>
+        <div>
+          <Summary />
+        </div>
+      </div>
+    );
+  }
 }
-
 export default ProductDetails;

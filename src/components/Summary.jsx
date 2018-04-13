@@ -1,12 +1,9 @@
 import React from 'react';
 
-const Summary = (props) => {
-    return (
-        <div>
-            <div className="host"></div>
-            <div className="space-summary"></div>
-        </div>
-    );
-}
-
+const Summary = () => (
+  <div>
+    <div className="host"> a</div>
+    <div className="space-summary"> b</div>
+  </div>
+);
 export default Summary;

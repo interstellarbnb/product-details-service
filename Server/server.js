@@ -1,18 +1,21 @@
 const express = require('express');
 const db = require('../database/database.js');
+const bodyParser = require('body-parser');
+
 const app = express();
+app.use(bodyParser.json());
+
 
 app.use(express.static('../dist'));
 
-app.get('/', (req, res) => {
-    // db.find((data) => {
-    //     return
-    //     res.end(200);
-    // })
-    res.sendStatus(200).end();
+app.get('/:id', (req, res) => {
+  let id = req.params.id;
+  db.findOne(id, (err, listing) => {
+    if (err) return console.log("FUCK");
+    res.send(listing);
+  });
 });
 
 app.listen(3003, () => {
-    console.log('Sup dogs we listening on channel 3003 @ localhost');
+  console.log('Sup dogs we listening on channel 3003 @ localhost');
 });
-

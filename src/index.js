@@ -1,8 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ProductDetails from './ProductDetails.jsx';
+import ProductDetails from './ProductDetails';
 
-ReactDOM.render(
-  <ProductDetails />, document.getElementById('app')
-);
-
+ReactDOM.render(<ProductDetails />, document.getElementById('app'));
