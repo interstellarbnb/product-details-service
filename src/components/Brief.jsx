@@ -2,7 +2,7 @@ import React from 'react';
 
 const Brief = (props) => {
   return (
-    <div className="container">
+    <div className="grid-container">
       <div className="spaceType">Entire Apartment</div>
       <div className="spaceTitle">Sunny apartment near metro station</div>
       <div className="spaceLoc">Vienna</div>
