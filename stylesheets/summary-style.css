@@ -1,0 +1,46 @@
+.summaryContainer {
+  border-bottom: 1px solid grey;
+  width: 671px;
+} 
+
+.avatar {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  overflow: hidden;
+}
+
+.hostContainer {
+  display: flex;
+  margin-bottom: 16px;
+  font-weight: 300;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  justify-content: flex-start;
+}
+
+.hostInfo {
+  padding: 8px;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+
+.summary {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  border-radius: 5px;
+  background: #f8f8f8;
+  padding: 16px;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  font-weight: 300;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+
+.summary-text {
+  margin-bottom: 15px;
+}

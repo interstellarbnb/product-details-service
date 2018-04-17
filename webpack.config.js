@@ -12,7 +12,20 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader',
-        include: /flexboxgrid/
+        include: /flexboxgrid/,
+      },
+      {
+        test: /\.css$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            localIdentName: '[name]-[local]-[hash:base64:6]',
+            camelCase: true,
+          },
+        }],
       },
     ],
   },

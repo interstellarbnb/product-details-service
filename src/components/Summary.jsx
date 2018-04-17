@@ -1,19 +1,20 @@
 import React from 'react';
+import styles from '/Users/devops/Desktop/Hacking/Projects/Interstellarbnb/stylesheets/summary-style.css';
 
 const Summary = (props) => {
   return (
-    <div className="summary-container">
+    <div className={styles.summaryContainer}>
 
-      <div className="host">
-        <img className="host-avatar" alt="host" src={props.info.hostUrl}></img>
-        <div className="host-info">
-          <div className="host-name"> Hosted by {props.info.hostName} </div>
+      <div className={styles.hostContainer}>
+        <img className={styles.avatar} alt="host" src={props.info.hostUrl}></img>
+        <div className={styles.hostInfo}>
+          <div className="host-name"> Hosted by Luke </div>
           <a href="#" className="contact"> Contact host </a>
         </div>
       </div>
 
-      <div className="summary">
-        <div className="summary-text">
+      <div className={styles.summary}>
+        <div className={styles.summaryText}>
 
           {props.info.summary}
 
@@ -25,29 +26,3 @@ const Summary = (props) => {
   );
 };
 export default Summary;
-
-/*
-
-<div className="grid-container">
-
-    <div className="host grid-item">
-      <img className="host-avatar" alt="host" src="https://a0.muscache.com/im/users/18431/profile_pic/1310056211/original.jpg?aki_policy=profile_x_medium"></img>
-    </div>
-    <div className="host-info grid-item">
-      <div className="host-name"> Hosted by Vicky </div>
-      <a href="#" className="contact"> Contact host </a>
-    </div>
-
-    <div className="summary">
-      <div className="summary-text">
-
-        Lovely warm comfortable and stylishly furnished house. 
-        Private bedroom and bathroom with use of kitchen/breakfast room.
-
-        <a className="view-more" href="#"> View more about this home </a>
-      </div>
-    </div>
-
-  </div>
-
-  */
