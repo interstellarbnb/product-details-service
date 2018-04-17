@@ -8,6 +8,7 @@ class ProductDetails extends React.Component {
     super(props);
     this.state = { 
       brief: [],
+      summary: [],
     };
   }
 
@@ -29,7 +30,12 @@ class ProductDetails extends React.Component {
             'numBedrooms': res.data.numBedrooms,
             'numBeds': res.data.numBeds,
             'numBaths': res.data.numBaths,
-          }
+          },
+            summary: {
+              'hostName': res.data.host.name,
+              'hostUrl': res.data.host.pictureUrl,
+              'summary': res.data.summary,
+            }
         })
       )
       .catch((err) =>
@@ -45,7 +51,7 @@ class ProductDetails extends React.Component {
           <Brief info={this.state.brief} />
         </div>
         <div>
-          <Summary />
+          <Summary info={this.state.summary} />
         </div>
       </div>
     );
