@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Brief from './components/Brief';
 import Summary from './components/Summary';
+import { Button } from 'react-bootstrap';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class ProductDetails extends React.Component {
         <div>
           <Summary info={this.state.summary} />
         </div>
+        <Button bsStyle='primary' bsSize='large'>schwing</Button>
       </div>
     );
   }
