@@ -1,28 +1,79 @@
 import React from 'react';
 import styles from '/Users/devops/Desktop/Hacking/Projects/Interstellarbnb/stylesheets/summary-style.css';
+import { Modal } from 'react-bootstrap';
 
-const Summary = (props) => {
-  return (
-    <div className={styles.summaryContainer}>
+class Summary extends React.Component {
+  constructor(props, context) {
+    super(props, context);
 
-      <div className={styles.hostContainer}>
-        <img className={styles.avatar} alt="host" src={props.info.hostUrl}></img>
-        <div className={styles.hostInfo}>
-          <div className="host-name"> Hosted by Luke </div>
-          <a href="#" className="contact"> Contact host </a>
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
+    this.state = {
+      // Dictates modal view or not
+      show: false,
+    }
+  }
+
+  handleShow() {
+    // On click, show modal
+    this.setState({
+      show: true,
+    });
+  }
+
+  handleClose() {
+    this.setState({
+      show: false,
+    })
+  }
+
+  render() {
+    return (
+      <div className={styles.summaryContainer}>
+        <div className={styles.hostContainer}>
+          <img className={styles.avatar} alt="host" src={this.props.info.hostUrl} />
+          <div className={styles.hostInfo}>
+            <div className="host-name"> Hosted by Luke </div>
+            <a href="#" className="contact"> Contact host </a>
+          </div>
         </div>
-      </div>
+        <div className={styles.summary}>
+          <div className={styles.summaryText}>
+            <p>{this.props.info.summaryBrief}...</p>
+          </div>
+          <a className="view-more" href="#" onClick={this.handleShow}> View more about this home </a>
 
-      <div className={styles.summary}>
-        <div className={styles.summaryText}>
+          <Modal show={this.state.show} onHide={this.handleClose} className={styles.modal}>
+            <Modal.Header closeButton>
+            <Modal.Title className={styles.modalTitle}>About Home</Modal.Title>
+            </Modal.Header>
 
-          {props.info.summary}
+            <Modal.Body className={styles.modalBox}>
+              <h4>Summary</h4>
+                <p>
+                  {this.props.info.summaryFull}
+                </p>
+              <h4>The space</h4>
+                <p>
+                  {this.props.info.space}
+                </p>
+              <h4>Interactions with guests</h4>
+                <p>
+                  {this.props.info.interactionWithGuests}
+                </p>
+              <h4>Notes</h4>
+                <p>
+                  {this.props.info.notes}
+                </p>
+            </Modal.Body>
+
+          </Modal>
 
         </div>
-        <a className="view-more" href="#"> View more about this home </a>
-      </div>
 
-    </div>
-  );
-};
+      </div>
+    );
+  };
+}
 export default Summary;
