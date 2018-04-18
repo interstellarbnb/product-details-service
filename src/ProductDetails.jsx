@@ -26,7 +26,7 @@ class ProductDetails extends React.Component {
           brief: {
             'type': res.data.spaceType,
             'title': res.data.spaceTitle,
-            'location': res.data. spaceLoc,
+            'location': res.data.spaceLoc,
             'numGuests': res.data.numGuests,
             'numBedrooms': res.data.numBedrooms,
             'numBeds': res.data.numBeds,
@@ -35,7 +35,11 @@ class ProductDetails extends React.Component {
             summary: {
               'hostName': res.data.host.name,
               'hostUrl': res.data.host.pictureUrl,
-              'summary': res.data.summary,
+              'summaryBrief': res.data.summary.plot.substring(0,149),
+              'summaryFull': res.data.summary.plot,
+              'space': res.data.summary.space,
+              'interactionWithGuests': res.data.summary.interactionWithGuests,
+              'notes': res.data.summary.notes,
             }
         })
       )
@@ -54,7 +58,6 @@ class ProductDetails extends React.Component {
         <div>
           <Summary info={this.state.summary} />
         </div>
-        <Button bsStyle='primary' bsSize='large'>schwing</Button>
       </div>
     );
   }
