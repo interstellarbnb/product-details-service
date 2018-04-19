@@ -9,19 +9,16 @@
   width: 64px;
   border-radius: 50%;
   border: 2px solid #FFFFFF;
-  /* margin: auto; */
   overflow: hidden;
 }
 
 .hostContainer {
   display: flex;
   justify-content: flex-start;
-  border: 1px solid red;
   margin-top: 16px;
   margin-bottom: 16px;
   font-weight: 300;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  /* justify-content: flex-start; */
 }
 
 .hostInfo {
