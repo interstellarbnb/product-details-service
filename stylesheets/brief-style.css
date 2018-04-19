@@ -6,6 +6,7 @@
   margin-bottom: 24px;
   border-bottom: 1px solid grey;
   width: 671px;
+  margin: auto;
 }
 
 .type {
@@ -35,7 +36,7 @@
   line-height: 22px !important;
   letter-spacing: 0.2px !important;
   font-weight: 300 !important;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .stats {
