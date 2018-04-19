@@ -52,6 +52,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
     "express": "^4.16.3",
+    "faker": "^4.1.0",
     "flexbox-react": "^4.4.0",
     "mongoose": "^5.0.14",
     "react": "^16.3.2",
@@ -59,6 +60,7 @@
     "react-dom": "^16.3.2",
     "react-flexbox-grid": "^2.0.0",
     "react-fontawesome": "^1.6.1",
+    "request": "^2.85.0",
     "semantic-ui-react": "^0.79.1"
   }
 }
