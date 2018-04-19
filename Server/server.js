@@ -12,10 +12,13 @@ app.get('/:id', (req, res) => {
   let id = req.params.id;
   db.findOne(id, (err, listing) => {
     if (err) return console.log("FUCK");
-    res.send(listing);
+    res.status(200).send(listing);
   });
 });
 
-app.listen(3003, () => {
-  console.log('Sup dogs we listening on channel 3003 @ localhost');
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(3003, () => {
+    // eslint-disable-next-line
+    console.log('Sup dogs we listening on channel 3003 @ localhost');
+  });
+}
