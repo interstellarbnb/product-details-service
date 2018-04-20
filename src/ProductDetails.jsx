@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Brief from './components/Brief';
 import Summary from './components/Summary';
+import Amenities from './components/Amenities';
 import { Button } from 'react-bootstrap';
 
 class ProductDetails extends React.Component {
@@ -57,6 +58,9 @@ class ProductDetails extends React.Component {
         </div>
         <div>
           <Summary info={this.state.summary} />
+        </div>
+        <div>
+          <Amenities />
         </div>
       </div>
     );
