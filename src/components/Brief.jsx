@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '/Users/devops/Desktop/Hacking/Projects/Interstellarbnb/stylesheets/brief-style.css';
+import styles from '../../stylesheets/brief-style.css';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faUsers from '@fortawesome/fontawesome-free-solid/faUsers';
 import faBed from '@fortawesome/fontawesome-free-solid/faBed';

@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '/Users/devops/Desktop/Hacking/Projects/Interstellarbnb/stylesheets/summary-style.css';
 import { Modal } from 'react-bootstrap';
+import styles from '../../stylesheets/summary-style.css';
 
 class Summary extends React.Component {
   constructor(props, context) {
@@ -12,7 +12,7 @@ class Summary extends React.Component {
     this.state = {
       // Dictates modal view or not
       show: false,
-    }
+    };
   }
 
   handleShow() {
@@ -25,7 +25,7 @@ class Summary extends React.Component {
   handleClose() {
     this.setState({
       show: false,
-    })
+    });
   }
 
   render() {
@@ -42,6 +42,7 @@ class Summary extends React.Component {
           <div className={styles.summaryText}>
             <p>{this.props.info.summaryBrief}...</p>
           </div>
+          
           <a className="view-more" href="#" onClick={this.handleShow}> View more about this home </a>
 
           <Modal show={this.state.show} onHide={this.handleClose} className={styles.modal}>
@@ -51,21 +52,21 @@ class Summary extends React.Component {
 
             <Modal.Body className={styles.modalBox}>
               <h4>Summary</h4>
-                <p>
-                  {this.props.info.summaryFull}
-                </p>
+              <p>
+                {this.props.info.summaryFull}
+              </p>
               <h4>The space</h4>
-                <p>
-                  {this.props.info.space}
-                </p>
+              <p>
+                {this.props.info.space}
+              </p>
               <h4>Interactions with guests</h4>
-                <p>
-                  {this.props.info.interactionWithGuests}
-                </p>
+              <p>
+                {this.props.info.interactionWithGuests}
+              </p>
               <h4>Notes</h4>
-                <p>
-                  {this.props.info.notes}
-                </p>
+              <p>
+                {this.props.info.notes}
+              </p>
             </Modal.Body>
 
           </Modal>
