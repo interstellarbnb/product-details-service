@@ -1,5 +1,7 @@
 import React from 'react';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import styles from '../../stylesheets/amenities-style.css';
+import { wifi, coffee, spaceship, map, dna, streetView } from '../../stylesheets/icons';
 
 class Amenities extends React.Component {
   constructor(props) {
@@ -21,14 +23,14 @@ class Amenities extends React.Component {
         <div className={styles.amenityContainer}>
 
           <div className={styles.leftCol}>
-            <p>Wifi</p>
-            <p>Free parking on premises</p>
-            <p>Breakfast</p>
+            <p><FontAwesomeIcon icon={wifi} />  Wifi 3.0</p>
+            <p><FontAwesomeIcon icon={spaceship} />  Spacecraft dock on premises</p>
+            <p><FontAwesomeIcon icon={coffee} />  Breakfast</p>
           </div>
           <div className={styles.rightCol}>
-            <p>Essentials</p>
-            <p>Shampoo</p>
-            <p>Washer/Dryer</p>
+            <p><FontAwesomeIcon icon={map} />  On the grid</p>
+            <p><FontAwesomeIcon icon={dna} />  Non-ionizing radiation</p>
+            <p><FontAwesomeIcon icon={streetView} />  Multiverse accessible</p>
           </div>
 
         </div>
