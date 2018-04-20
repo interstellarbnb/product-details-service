@@ -1,12 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/details');
-
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  // we're connected!
-});
+mongoose.connect('mongodb://localhost/details');
 
 const listingSchema = mongoose.Schema({
   id: {
@@ -49,7 +44,7 @@ const findOne = (listingId, callback) => {
 };
 
 // To clear db, run this
-// Listing.remove({}, function(err) { 
+// Listing.remove({}, (err) => { 
 //   console.log('collection removed'); 
 // });
 
