@@ -3,12 +3,11 @@ import axios from 'axios';
 import Brief from './components/Brief';
 import Summary from './components/Summary';
 import Amenities from './components/Amenities';
-import { Button } from 'react-bootstrap';
 
 class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       brief: [],
       summary: [],
     };
@@ -18,35 +17,32 @@ class ProductDetails extends React.Component {
     this.getData();
   }
 
-  getData = () => {
+  getData() {
     // Append id end of url to receive desired db entry
     // ID's range from 0 - 99
     axios.get('http://127.0.0.1:3003/0')
-      .then((res) =>
+      .then(({ data }) =>
         this.setState({
           brief: {
-            'type': res.data.spaceType,
-            'title': res.data.spaceTitle,
-            'location': res.data.spaceLoc,
-            'numGuests': res.data.numGuests,
-            'numBedrooms': res.data.numBedrooms,
-            'numBeds': res.data.numBeds,
-            'numBaths': res.data.numBaths,
+            type: data.spaceType,
+            title: data.spaceTitle,
+            location: data.spaceLoc,
+            numGuests: data.numGuests,
+            numBedrooms: data.numBedrooms,
+            numBeds: data.numBeds,
+            numBaths: data.numBaths,
           },
-            summary: {
-              'hostName': res.data.host.name,
-              'hostUrl': res.data.host.pictureUrl,
-              'summaryBrief': res.data.summary.plot.substring(0,149),
-              'summaryFull': res.data.summary.plot,
-              'space': res.data.summary.space,
-              'interactionWithGuests': res.data.summary.interactionWithGuests,
-              'notes': res.data.summary.notes,
-            }
-        })
-      )
-      .catch((err) =>
-        console.log(err)
-      );
+          summary: {
+            hostName: data.host.name,
+            hostUrl: data.host.pictureUrl,
+            summaryBrief: data.summary.plot.substring(0, 149),
+            summaryFull: data.summary.plot,
+            space: data.summary.space,
+            interactionWithGuests: data.summary.interactionWithGuests,
+            notes: data.summary.notes,
+          },
+        }))
+      .catch(err => console.log(err));
   }
 
 
