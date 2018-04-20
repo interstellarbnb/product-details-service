@@ -2,7 +2,12 @@
   border-bottom: 1px solid grey;
   width: 671px;
   margin: auto;
+  margin-bottom: 24px;
 } 
+
+a {
+  color: #008489;
+}
 
 .avatar {
   height: 64px;

@@ -1,0 +1,51 @@
+.container {
+  margin: auto;
+  width: 671px;
+  height: 191px;
+}
+
+.titleContainer {
+  margin-bottom: 16px;
+}
+
+.title {
+  color: #484848;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+}
+
+.amenityContainer {
+  display: flex;
+  justify-content: flex-start;
+  color: #484848;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  font-weight: 300;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  width: 262px;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  width: 262px;
+}
+
+.viewMore {
+  color: #008489;
+  font-size: 17px;
+  font-weight: normal;
+}
