@@ -61,7 +61,7 @@ class Summary extends React.Component {
               </p>
               <h4>Interactions with guests</h4>
               <p>
-                {this.props.info.interactionWithGuests}
+                {this.props.info.guestInteraction}
               </p>
               <h4>Notes</h4>
               <p>

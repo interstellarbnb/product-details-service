@@ -50,7 +50,7 @@ for (let i = 0; i < 100; i += 1) {
       plot: faker.lorem.paragraph(),
       space: faker.lorem.paragraph(),
       notes: faker.lorem.paragraph(),
-      interactionWithGuest: faker.lorem.paragraph(),
+      guestInteraction: faker.lorem.paragraph(),
     },
     amenities: {
       basics: generateAmenities(basicAmenities),

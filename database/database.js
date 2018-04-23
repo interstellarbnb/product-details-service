@@ -20,7 +20,7 @@ const listingSchema = mongoose.Schema({
   summary: {
     plot: String,
     space: String,
-    interactionWithGuests: String,
+    guestInteraction: String,
     notes: String,
   },
   amenities: {

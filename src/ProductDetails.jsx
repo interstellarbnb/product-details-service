@@ -23,7 +23,6 @@ class ProductDetails extends React.Component {
   componentDidMount() {
     let endpoint = window.location.href.split('/')[3];
     endpoint = endpoint || 1;
-    console.log(endpoint);
     this.getData(endpoint);
   }
 
@@ -48,7 +47,7 @@ class ProductDetails extends React.Component {
             summaryBrief: summary.plot.substring(0, 149),
             summaryFull: summary.plot,
             space: summary.space,
-            interactionWithGuests: summary.interactionWithGuests,
+            guestInteraction: summary.guestInteraction,
             notes: summary.notes,
           },
           amenities: {
@@ -58,7 +57,8 @@ class ProductDetails extends React.Component {
             facilities: amenities.facilities,
             notIncluded: amenities.notIncluded,
           },
-        }))
+        }),       
+      )
       .catch(err => console.log(err));
   }
 
