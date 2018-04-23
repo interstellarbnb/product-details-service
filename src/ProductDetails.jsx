@@ -10,6 +10,13 @@ class ProductDetails extends React.Component {
     this.state = {
       brief: [],
       summary: [],
+      amenities: {
+        basics: [],
+        dining: [],
+        bedBath: [],
+        facilities: [],
+        notIncluded: [],
+      },
     };
   }
 
@@ -21,7 +28,7 @@ class ProductDetails extends React.Component {
     // Append id end of url to receive desired db entry
     // ID's range from 0 - 99
     axios.get('http://127.0.0.1:3003/0')
-      .then(({ data }) =>
+      .then(({data,  data: { host, summary, amenities }}) =>
         this.setState({
           brief: {
             type: data.spaceType,
@@ -33,13 +40,20 @@ class ProductDetails extends React.Component {
             numBaths: data.numBaths,
           },
           summary: {
-            hostName: data.host.name,
-            hostUrl: data.host.pictureUrl,
-            summaryBrief: data.summary.plot.substring(0, 149),
-            summaryFull: data.summary.plot,
-            space: data.summary.space,
-            interactionWithGuests: data.summary.interactionWithGuests,
-            notes: data.summary.notes,
+            hostName: host.name,
+            hostUrl: host.pictureUrl,
+            summaryBrief: summary.plot.substring(0, 149),
+            summaryFull: summary.plot,
+            space: summary.space,
+            interactionWithGuests: summary.interactionWithGuests,
+            notes: summary.notes,
+          },
+          amenities: {
+            basics: amenities.basics,
+            dining: amenities.dining,
+            bedBath: amenities.bedBath,
+            facilities: amenities.facilities,
+            notIncluded: amenities.notIncluded,
           },
         }))
       .catch(err => console.log(err));
@@ -56,7 +70,7 @@ class ProductDetails extends React.Component {
           <Summary info={this.state.summary} />
         </div>
         <div>
-          <Amenities />
+          <Amenities info={this.state.amenities} />
         </div>
       </div>
     );

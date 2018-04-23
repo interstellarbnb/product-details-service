@@ -42,7 +42,7 @@ class Summary extends React.Component {
           <div className={styles.summaryText}>
             <p>{this.props.info.summaryBrief}...</p>
           </div>
-          
+               
           <a className="view-more" href="#" onClick={this.handleShow}> View more about this home </a>
 
           <Modal show={this.state.show} onHide={this.handleClose} className={styles.modal}>

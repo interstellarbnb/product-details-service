@@ -49,39 +49,40 @@ class Amenities extends React.Component {
         </div>
 
         <a className='' href="#" onClick={this.handleShow}> Show all 12 amenities</a>
-        <Modal show={this.state.show} onHide={this.handleClose} className=''>
-            <Modal.Header closeButton>
+        <Modal show={this.state.show} onHide={this.handleClose} className={styles.modal}>
+          <Modal.Header closeButton>
             <Modal.Title className=''>Amenities</Modal.Title>
-            </Modal.Header>
+          </Modal.Header>
 
-            <Modal.Body className=''>
-              <h4>Basic</h4>
-              <p>
-                somthing
-              </p>
-              <h4>Family features</h4>
-              <p>
-                something
-              </p>
-              <h4>Facilities</h4>
-              <p>
-                something
-              </p>
-              <h4>Dining</h4>
-              <p>
-                something
-              </p>
-              <h4>Bed and bath</h4>
-              <p>
-                something
-              </p>
-              <h4>Not included</h4>
-              <p>
-                something crossed out
-              </p>
-            </Modal.Body>
+          <Modal.Body className=''>
+            <h4>Basic</h4>
+            {this.props.info.basics.map((item, id) => (
+              <p key={id}> {item} </p>
+              ))
+            }
+            <h4>Dining</h4>
+            {this.props.info.dining.map((item, id) => (
+              <p key={id}> {item} </p>
+              ))
+            }
+            <h4>Facilities</h4>
+            {this.props.info.facilities.map((item, id) => (
+              <p key={id}> {item} </p>
+              ))
+            }
+            <h4>Bed and bath</h4>
+            {this.props.info.bedBath.map((item, id) => (
+              <p key={id}> {item} </p>
+              ))
+            }
+            <h4>Not included</h4>
+            {this.props.info.notIncluded.map((item, id) => (
+              <p key={id}> {item} </p>
+              ))
+            }
+          </Modal.Body>
 
-          </Modal>
+        </Modal>
       </div>
     );
   };

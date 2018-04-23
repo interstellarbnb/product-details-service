@@ -23,6 +23,13 @@ const listingSchema = mongoose.Schema({
     interactionWithGuests: String,
     notes: String,
   },
+  amenities: {
+    basics: [{ type: String }],
+    dining: [{ type: String }],
+    bedBath: [{ type: String }],
+    facilities: [{ type: String }],
+    notIncluded: [{ type: String }],
+  },
 });
 
 const Listing = mongoose.model('Listing', listingSchema);

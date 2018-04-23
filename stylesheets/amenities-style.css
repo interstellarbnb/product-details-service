@@ -2,6 +2,8 @@
   margin: auto;
   width: 671px;
   height: 191px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-weight: 300;
 }
 
 .titleContainer {
@@ -48,4 +50,15 @@
   color: #008489;
   font-size: 17px;
   font-weight: normal;
+}
+
+/*
+  MODAL STYLING BELOW
+*/
+
+.modal {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 17px;
+  font-weight: 300;
+  word-wrap: break-word;
 }

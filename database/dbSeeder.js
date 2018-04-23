@@ -18,7 +18,8 @@ const bedBathAmenities = ['Sleeping pods', 'Smartflow toilets', 'Self-cleaning m
   'Chromatherapy shower', 'Auto towel-warming', 'Smart mirror', 'Bathtub', 'Heated floors'];
 
 const facilitiesAmenities = ['Shuttle dock', 'Hot tub', 'Swimming pool', 'Bubble shield', 'Solar powered',
-  'Organic farm', 'Simulation station', 'Moisture vaporator', 'Cogwave jammer', 'Geomapper module', 'Tesla coil'];
+  'Organic farm', 'Simulation station', 'Moisture vaporator', 'Cogwave jammer', 'Geomapper module', 'Tesla coil',
+  'Dejarik board'];
 
 // Returns an array composed of a random selection of a random # of elements from a given list
 const generateAmenities = (arr) => {
@@ -26,14 +27,11 @@ const generateAmenities = (arr) => {
   return _.sample(arr, randNum);
 };
 
-const generateNotIncluded = (basics) => {
-  console.log('in generator');
-  console.log(basics);
-  return _.difference(basicAmenities, basics);
-};
+// Returns difference between basicAmenities arr and passed in arr
+const generateNotIncluded = basics => _.difference(basicAmenities, basics);
 
 let typeCount = 0;
-for (let i = 1; i < 3; i += 1) {
+for (let i = 0; i < 100; i += 1) {
   const randNum = Math.floor(1 + (Math.random() * 6));
   const newSeed = {
     id: i,
@@ -58,17 +56,14 @@ for (let i = 1; i < 3; i += 1) {
       basics: generateAmenities(basicAmenities),
       dining: generateAmenities(diningAmenities),
       bedBath: generateAmenities(bedBathAmenities),
-      facilitiesAmenities: generateAmenities(facilitiesAmenities),
-      notIncluded: (() => { return (_.difference(basicAmenities, this.newSeed.amenities.basics)) })(),
+      facilities: generateAmenities(facilitiesAmenities),
     },
   };
-  // db.Listing.create(newSeed, (err, small) => {
-  //   if (err) return console.log(err);
-  //   //  I should update this to use promies
-  // });
-  console.log(newSeed.amenities);
-  if (typeCount === 9) {
-    typeCount = 0;
-  }
+  newSeed.amenities.notIncluded = generateNotIncluded(newSeed.amenities.basics);
+  db.Listing.create(newSeed, (err, small) => {
+    if (err) return console.log(err);
+    //  I should update this to use promies
+  });
+  if (typeCount === 9) { typeCount = 0; }
   typeCount += 1;
 }
