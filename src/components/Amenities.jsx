@@ -48,36 +48,46 @@ class Amenities extends React.Component {
           </div>
         </div>
 
-        <a className='' href="#" onClick={this.handleShow}> Show all 12 amenities</a>
-        <Modal show={this.state.show} onHide={this.handleClose} className={styles.modal}>
+        <a className={styles.viewAmenities} href="#" onClick={this.handleShow}> Show all 12 amenities</a>
+        <Modal show={this.state.show} onHide={this.handleClose} className=''>
           <Modal.Header closeButton>
-            <Modal.Title className=''>Amenities</Modal.Title>
+            <Modal.Title className={styles.modalTitle}>Amenities</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body className=''>
-            <h4>Basic</h4>
-            {this.props.info.basics.map((item, id) => (
-              <p key={id}> {item} </p>
+          <Modal.Body className={styles.modal}>
+            <h4 className={styles.amenityTitle}>Basic</h4>
+            {this.props.info.basics.map((item, index) => (
+              <div className={styles.summaryTextDiv}>
+                <p className={styles.amenityText} key={index}> {item} </p>
+              </div>
               ))
             }
-            <h4>Dining</h4>
-            {this.props.info.dining.map((item, id) => (
-              <p key={id}> {item} </p>
+            <h4 className={styles.amenityTitle}>Dining</h4>
+            {this.props.info.dining.map((item, index) => (
+              <div className={styles.summaryTextDiv}>
+                <p className={styles.amenityText} key={index}> {item} </p>
+              </div>
               ))
             }
-            <h4>Facilities</h4>
-            {this.props.info.facilities.map((item, id) => (
-              <p key={id}> {item} </p>
+            <h4 className={styles.amenityTitle}>Facilities</h4>
+            {this.props.info.facilities.map((item, index) => (
+              <div className={styles.summaryTextDiv}>
+                <p className={styles.amenityText} key={index}> {item} </p>
+              </div>
               ))
             }
-            <h4>Bed and bath</h4>
-            {this.props.info.bedBath.map((item, id) => (
-              <p key={id}> {item} </p>
+            <h4 className={styles.amenityTitle}>Bed and bath</h4>
+            {this.props.info.bedBath.map((item, index) => (
+              <div className={styles.summaryTextDiv}>
+                <p className={styles.amenityText} key={index}> {item} </p>
+              </div>
               ))
             }
-            <h4>Not included</h4>
-            {this.props.info.notIncluded.map((item, id) => (
-              <p key={id}> {item} </p>
+            <h4 className={styles.amenityTitle}>Not included</h4>
+            {this.props.info.notIncluded.map((item, index) => (
+              <div className={styles.summaryTextDiv}>
+                <p className={styles.notIncluded} key={index}> {item} </p>
+              </div>
               ))
             }
           </Modal.Body>

@@ -1,9 +1,10 @@
 .container {
   margin: auto;
-  width: 671px;
-  height: 191px;
+  width: 648px !important;
+  height: 207px;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-weight: 300;
+  border-bottom: 1px solid#484848;
 }
 
 .titleContainer {
@@ -32,6 +33,7 @@
   line-height: 22px;
   letter-spacing: 0.2px;
   font-weight: 300;
+  margin-bottom: 16px;
 }
 
 .leftCol {
@@ -46,9 +48,9 @@
   width: 262px;
 }
 
-.viewMore {
+.viewAmenities {
   color: #008489;
-  font-size: 17px;
+  font-size: 17px !important;
   font-weight: normal;
 }
 
@@ -61,4 +63,60 @@
   font-size: 17px;
   font-weight: 300;
   word-wrap: break-word;
+  color: #484848;
+}
+
+.modalTitle {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32px;
+}
+.amenityTitle {
+  font-weight: normal;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.amenityText {
+  margin-top: 24px !important;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: undefined;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: 200;
+  margin-bottom: 24px !important;
+}
+
+.summaryTextDiv {
+  line-height: 1.43;
+  border-bottom: 1px solid #484848;
+}
+.notIncluded {
+  text-decoration: line-through;
+  margin-top: 24px !important;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: undefined;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: 300;
+  margin-bottom: 24px !important;
 }

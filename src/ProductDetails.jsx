@@ -28,7 +28,7 @@ class ProductDetails extends React.Component {
     // Append id end of url to receive desired db entry
     // ID's range from 0 - 99
     axios.get('http://127.0.0.1:3003/0')
-      .then(({data,  data: { host, summary, amenities }}) =>
+      .then(({ data, data: { host, summary, amenities } }) =>
         this.setState({
           brief: {
             type: data.spaceType,
