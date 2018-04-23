@@ -4,16 +4,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
+app.use('/:id', express.static('../dist'));
 app.use(bodyParser.json());
 app.use(cors());
 
-
-app.use(express.static('../dist'));
-
-app.get('/:id', (req, res) => {
+app.get('/listing/:id', (req, res) => {
   let id = req.params.id;
   db.findOne(id, (err, listing) => {
-    if (err) return console.log("FUCK");
+    if (err) return;
     res.status(200).send(listing);
   });
 });

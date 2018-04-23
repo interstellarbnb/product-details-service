@@ -21,13 +21,16 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount() {
-    this.getData();
+    let endpoint = window.location.href.split('/')[3];
+    endpoint = endpoint || 1;
+    console.log(endpoint);
+    this.getData(endpoint);
   }
 
-  getData() {
+  getData(endpoint) {
     // Append id end of url to receive desired db entry
     // ID's range from 0 - 99
-    axios.get('http://127.0.0.1:3003/0')
+    axios.get(`http://127.0.0.1:3003/listing/${endpoint}`)
       .then(({ data, data: { host, summary, amenities } }) =>
         this.setState({
           brief: {

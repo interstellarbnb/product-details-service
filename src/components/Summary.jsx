@@ -34,7 +34,7 @@ class Summary extends React.Component {
         <div className={styles.hostContainer}>
           <img className={styles.avatar} alt="host" src={this.props.info.hostUrl} />
           <div className={styles.hostInfo}>
-            <div className="host-name"> Hosted by Luke </div>
+            <div className="host-name"> {this.props.info.hostName} </div>
             <a href="#" className="contact"> Contact host </a>
           </div>
         </div>
