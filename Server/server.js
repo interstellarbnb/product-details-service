@@ -5,7 +5,7 @@ var path = require('path');
 const cors = require('cors');
 
 const app = express();
-app.use(‘/:id’, express.static(path.resolve(__dirname, ‘../dist’)));
+app.use('/:id', express.static(path.resolve(__dirname, ‘../dist’)));
 app.use('/dist', express.static('../dist'));
 app.use(bodyParser.json());
 app.use(cors());
