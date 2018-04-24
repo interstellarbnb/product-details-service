@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config ./webpack.config.js --mode development",
+    "build": "webpack --config ./webpack.config.js --mode development",
     "test": "jest",
-    "seed": "node database/dbSeeder.js"
+    "seed": "node database/dbSeeder.js",
+    "start": "node server/server.js"
   },
   "keywords": [],
   "author": "",
