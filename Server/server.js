@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const app = express();
 app.use('/:id', express.static('../dist'));
+app.use('/dist', express.static('../dist'));
 app.use(bodyParser.json());
 app.use(cors());
 

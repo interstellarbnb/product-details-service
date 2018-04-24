@@ -57,8 +57,7 @@ class ProductDetails extends React.Component {
             facilities: amenities.facilities,
             notIncluded: amenities.notIncluded,
           },
-        }),       
-      )
+        }))
       .catch(err => console.log(err));
   }
 

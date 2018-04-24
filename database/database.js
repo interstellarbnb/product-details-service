@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const db = mongoose.connection;
 mongoose.connect('mongodb://localhost/details');
-
 const listingSchema = mongoose.Schema({
   id: {
     type: Number,
@@ -34,7 +33,7 @@ const listingSchema = mongoose.Schema({
 
 const Listing = mongoose.model('Listing', listingSchema);
 
-// Returns all documents
+// Returns all listing in db
 const find = (callback) => {
   Listing.find((err, result) => {
     if (err) return console.log(err);
@@ -42,7 +41,7 @@ const find = (callback) => {
   });
 };
 
-// Grabs 1 document with passed in id
+// Finds 1 listing 
 const findOne = (listingId, callback) => {
   Listing.findOne({ id: listingId }, (err, res) => {
     if (err) return callback(err, null);
@@ -50,18 +49,8 @@ const findOne = (listingId, callback) => {
   });
 };
 
-// To clear db, run this
-// Listing.remove({}, (err) => { 
-//   console.log('collection removed'); 
-// });
-
-// findOne({ id: 0 }, (err, res) => {
-//   if (err) return console.log(err);
-//   console.log(res);
-// });
-
-// 1st seed
-const newListing = new Listing({
+// best seed
+const hoth = new Listing({
   id: 0,
   spaceType: 'Rebel Alliance Base',
   spaceTitle: 'Echo Base',
@@ -96,19 +85,6 @@ const newListing = new Listing({
     notes: 'Temperatures are subzero! Bring a coat',
   },
 });
-
-// To seed with a given entry..
-// Listing.create(newListing, (err, res) => {
-//   if(err) return console.log(err);
-//   console.log('Saved!', res);
-// })
-
-// To log all entries, run this
-// Listing.find(function (err, results) {
-//     if (err) return console.error(err);
-//     console.log(results);
-//   });
-
 
 module.export = db;
 module.exports.find = find;

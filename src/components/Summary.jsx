@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import styles from '../../stylesheets/summary-style.css';
+import PropTypes from 'prop-types';
 
 class Summary extends React.Component {
   constructor(props, context) {
@@ -77,4 +78,5 @@ class Summary extends React.Component {
     );
   };
 }
+
 export default Summary;

@@ -21,13 +21,12 @@ const facilitiesAmenities = ['Shuttle dock', 'Hot tub', 'Swimming pool', 'Bubble
   'Organic farm', 'Simulation station', 'Moisture vaporator', 'Cogwave jammer', 'Geomapper module', 'Tesla coil',
   'Dejarik board'];
 
-// Returns an array composed of a random selection of a random # of elements from a given list
+// Returns a collection of random amenities
 const generateAmenities = (arr) => {
   const randNum = Math.floor(1 + (Math.random() * arr.length));
   return _.sample(arr, randNum);
 };
 
-// Returns difference between basicAmenities arr and passed in arr
 const generateNotIncluded = basics => _.difference(basicAmenities, basics);
 
 let typeCount = 0;

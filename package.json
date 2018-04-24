@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --config ./webpack.config.js --mode development",
-    "test": "jest"
+    "test": "jest",
+    "seed": "node database/dbSeeder.js"
   },
   "keywords": [],
   "author": "",
