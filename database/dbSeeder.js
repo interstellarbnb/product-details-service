@@ -11,7 +11,7 @@ const basicAmenities = ['Wifi 3.0', 'Interstellar TV', 'Geiger counter', 'Washer
   'Central heating', 'Air conditioning', 'Shuttle charging', 'First aid kit', 'Carbon monoxide monitor',
   'Siri enabled', 'Wadsworth - personal robotic butler', 'Flux sensor', 'Haptic drive'];
 
-const diningAmenities = ['Coffe maker', 'Basic cooking utensils', 'Dishes and silverware', 'Microwave', 'Oven',
+const diningAmenities = ['Coffee maker', 'Basic cooking utensils', 'Dishes and silverware', 'Microwave', 'Oven',
   'Stove', 'Refrigerator', 'Full bar', 'Mini bar', 'Geothermal oven', 'Food sanitizer', 'Wonka vision'];
 
 const bedBathAmenities = ['Sleeping pods', 'Smartflow toilets', 'Self-cleaning mattress', 'floating beds',
@@ -29,18 +29,19 @@ const generateAmenities = (arr) => {
 
 const generateNotIncluded = basics => _.difference(basicAmenities, basics);
 
+const generateRandomNumber = () => Math.floor(1 + (Math.random() * 6));
+
 let typeCount = 0;
 for (let i = 0; i < 100; i += 1) {
-  const randNum = Math.floor(1 + (Math.random() * 6));
   const newSeed = {
     id: i,
     spaceType: types[typeCount],
     spaceTitle: faker.commerce.productName(),
     spaceLoc: faker.address.county(),
-    numGuests: randNum,
-    numBedrooms: randNum,
-    numBeds: randNum,
-    numBaths: randNum,
+    numGuests: generateRandomNumber(),
+    numBedrooms: generateRandomNumber(),
+    numBeds: generateRandomNumber(),
+    numBaths: generateRandomNumber(),
     host: {
       name: faker.name.findName(),
       pictureUrl: faker.image.avatar(),
