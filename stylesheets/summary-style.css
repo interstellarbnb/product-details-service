@@ -35,6 +35,10 @@ a {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 }
 
+body.modal-open {
+  overflow: visible;
+}
+
 .summary {
   margin-top: 16px;
   margin-bottom: 32px;

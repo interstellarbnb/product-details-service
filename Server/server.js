@@ -19,7 +19,7 @@ app.get('/listing/:id', (req, res) => {
 });
 
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(3003, () => {
+  app.listen(8080, () => {
     // eslint-disable-next-line
     console.log('Sup dogs we listening on channel 3003 @ localhost');
   });

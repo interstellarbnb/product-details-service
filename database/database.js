@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-
+// docker run -d -p 8080:1337 -v $(pwd):/src/app --name listing_details_container listing_details
 const db = mongoose.connection;
-mongoose.connect('mongodb://localhost/details');
+// mongoose.connect('mongodb://localhost/details');
+mongoose.connect('mongodb://172.17.0.2:27017/details');
 const listingSchema = mongoose.Schema({
   id: {
     type: Number,

@@ -66,6 +66,10 @@
   color: #484848;
 }
 
+body.modal-open {
+  overflow: visible;
+}
+
 .modalTitle {
   font-size: 28px;
   font-weight: 700;

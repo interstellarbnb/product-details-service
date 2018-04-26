@@ -15,7 +15,8 @@ class Amenities extends React.Component {
   }
 
   // Show modal
-  handleShow() {
+  handleShow(e) {
+    e.preventDefault();
     this.setState({
       show: true,
     });
@@ -48,7 +49,7 @@ class Amenities extends React.Component {
           </div>
         </div>
 
-        <a className={styles.viewAmenities} href="#" onClick={this.handleShow}> Show all 12 amenities</a>
+        <a className={styles.viewAmenities} href="#" onClick={(e) => this.handleShow(e)}> Show all 12 amenities</a>
         <Modal show={this.state.show} onHide={this.handleClose} className=''>
           <Modal.Header closeButton>
             <Modal.Title className={styles.modalTitle}>Amenities</Modal.Title>
