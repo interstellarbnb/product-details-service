@@ -15,8 +15,10 @@ RUN npm install
 
 RUN yarn install
 
+RUN npm run build
+
 # What port will the container talk to the outside world with once created?
 EXPOSE 8080
 
 # How do you start your app?
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "docker" ]

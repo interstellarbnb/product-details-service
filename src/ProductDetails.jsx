@@ -29,7 +29,7 @@ class ProductDetails extends React.Component {
   getData(endpoint) {
     // Append id end of url to receive desired db entry
     // ID's range from 0 - 99
-    axios.get(`http://127.0.0.1:3003/listing/${endpoint}`)
+    axios.get(`http://ec2-13-57-253-115.us-west-1.compute.amazonaws.com/${endpoint}/listing`)
       .then(({ data, data: { host, summary, amenities } }) =>
         this.setState({
           brief: {

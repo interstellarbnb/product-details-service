@@ -10,7 +10,7 @@ app.use('/dist', express.static('../dist'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/listing/:id', (req, res) => {
+app.get('/:id/listing', (req, res) => {
   let id = req.params.id;
   db.findOne(id, (err, listing) => {
     if (err) return;
@@ -21,6 +21,6 @@ app.get('/listing/:id', (req, res) => {
 if (process.env.NODE_ENV !== 'test') {
   app.listen(8080, () => {
     // eslint-disable-next-line
-    console.log('Sup dogs we listening on channel 3003 @ localhost');
+    console.log('Sup dogs we listening on channel 8080 @ localhost');
   });
 }

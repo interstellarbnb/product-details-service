@@ -7,7 +7,8 @@
     "build": "webpack --config ./webpack.config.js --mode development",
     "test": "jest",
     "seed": "node database/dbSeeder.js",
-    "start": "node server/server.js"
+    "docker": "node database/dbSeeder.js & node Server/server.js",
+    "start": "node Server/server.js"
   },
   "keywords": [],
   "author": "",

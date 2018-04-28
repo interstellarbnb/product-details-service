@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import styles from '../../stylesheets/amenities-style.css';
-import { wifi, coffee, spaceship, map, dna, streetView } from '../../stylesheets/icons';
+import { wifi, gamepad, spaceship, map, dna, streetView } from '../../stylesheets/icons';
 
 class Amenities extends React.Component {
   constructor(props) {
@@ -38,13 +38,13 @@ class Amenities extends React.Component {
         </div>
         <div className={styles.amenityContainer}>
           <div className={styles.leftCol}>
-            <p><FontAwesomeIcon icon={wifi} />  Wifi 3.0</p>
+            <p><FontAwesomeIcon icon={wifi} />  Internet 3.0</p>
             <p><FontAwesomeIcon icon={spaceship} />  Spacecraft dock on premises</p>
-            <p><FontAwesomeIcon icon={coffee} />  Breakfast</p>
+            <p><FontAwesomeIcon icon={gamepad} />  VR ready</p>
           </div>
           <div className={styles.rightCol}>
-            <p><FontAwesomeIcon icon={map} />  On the grid</p>
-            <p><FontAwesomeIcon icon={dna} />  Non-ionizing radiation</p>
+            <p><FontAwesomeIcon icon={map} />  Off the grid</p>
+            <p><FontAwesomeIcon icon={dna} />  Electromagnetic rad protected</p>
             <p><FontAwesomeIcon icon={streetView} />  Multiverse accessible</p>
           </div>
         </div>

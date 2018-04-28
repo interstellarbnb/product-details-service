@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 // docker run -d -p 8080:1337 -v $(pwd):/src/app --name listing_details_container listing_details
 const db = mongoose.connection;
+// When running locally:
 // mongoose.connect('mongodb://localhost/details');
-mongoose.connect('mongodb://172.17.0.2:27017/details');
+// When dockerizing:
+// mongoose.connect('mongodb://172.17.0.2:27017/details');
+// When composing:
+mongoose.connect('mongodb://database/details');
+
 const listingSchema = mongoose.Schema({
   id: {
     type: Number,
@@ -50,6 +55,8 @@ const findOne = (listingId, callback) => {
   });
 };
 
+const disconnect = () => { mongoose.disconnect(); };
+
 // best seed
 const hoth = new Listing({
   id: 0,
@@ -89,5 +96,6 @@ const hoth = new Listing({
 
 module.export = db;
 module.exports.find = find;
+module.exports.disconnect = disconnect;
 module.exports.findOne = findOne;
 module.exports.Listing = Listing;

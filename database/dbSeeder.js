@@ -26,15 +26,14 @@ const generateAmenities = (arr) => {
   const randNum = Math.floor(1 + (Math.random() * arr.length));
   return _.sample(arr, randNum);
 };
-
 const generateNotIncluded = basics => _.difference(basicAmenities, basics);
-
 const generateRandomNumber = () => Math.floor(1 + (Math.random() * 6));
 
+let count = 0;
 let typeCount = 0;
-for (let i = 0; i < 100; i += 1) {
+const createSeed = () => {
   const newSeed = {
-    id: i,
+    id: count,
     spaceType: types[typeCount],
     spaceTitle: faker.commerce.productName(),
     spaceLoc: faker.address.county(),
@@ -60,10 +59,24 @@ for (let i = 0; i < 100; i += 1) {
     },
   };
   newSeed.amenities.notIncluded = generateNotIncluded(newSeed.amenities.basics);
-  db.Listing.create(newSeed, (err, small) => {
+  db.Listing.create(newSeed, (err, success) => {
     if (err) return console.log(err);
-    //  I should update this to use promies
+    if (success && count < 100) {
+      count += 1;
+      createSeed();
+    } else {
+      console.log('All done seeding ', count, ' entries!');
+      db.disconnect();
+    }
   });
+
   if (typeCount === 9) { typeCount = 0; }
   typeCount += 1;
-}
+};
+
+// Running this more than once on any Mango instance will restult in a crash
+// due to the unique ID's
+db.Listing.remove({}, (err) => {
+  console.log('Collection removed');
+});
+createSeed();

@@ -11,6 +11,7 @@ import spaceship from '@fortawesome/fontawesome-free-solid/faSpaceShuttle';
 import map from '@fortawesome/fontawesome-free-solid/faMap';
 import dna from '@fortawesome/fontawesome-free-solid/faDna';
 import streetView from '@fortawesome/fontawesome-free-solid/faStreetView';
+import gamepad from '@fortawesome/fontawesome-free-solid/faGamepad';
 
 module.exports = {
   users,
@@ -23,4 +24,5 @@ module.exports = {
   map,
   dna,
   streetView,
+  gamepad,
 };

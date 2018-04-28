@@ -95,13 +95,13 @@ body.modal-open {
   margin: 0px;
   word-wrap: break-word;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 17px;
+  line-height: 22px;
   letter-spacing: normal;
   padding-top: 0px;
   padding-bottom: 0px;
   color: #484848;
-  font-weight: lighter;
+  font-weight: 300;
   margin-bottom: 24px !important;
 }
 
