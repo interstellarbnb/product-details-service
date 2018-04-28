@@ -1,0 +1,31 @@
+.container {
+  margin: auto;
+  width: 648px;
+  color: #484848;
+  letter-spacing: 0.2px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  margin-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #484848;
+}
+
+.titleContainer {
+  margin-bottom: 16px;
+}
+
+.title {
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.textContainer {
+  margin-bottom: 16px;
+}
+
+.text {
+  font-size: 17px;
+  font-weight: 200;
+}

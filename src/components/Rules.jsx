@@ -5,7 +5,7 @@ const Rules = () => {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
-        <h2 className={styles.title}> House Rules </h2>
+        <p className={styles.title}> House Rules </p>
       </div>
       <div className={styles.ruleContainer}>
         <div className={styles.list}>
