@@ -19,6 +19,14 @@ class ProductDetails extends React.Component {
         facilities: [],
         notIncluded: [],
       },
+      rules: {
+        list: [],
+        expanded: [],
+      },
+      cancellations: {
+        strictness: [],
+        policy: [],
+      },
     };
   }
 
@@ -60,6 +68,15 @@ class ProductDetails extends React.Component {
             facilities: amenities.facilities,
             notIncluded: amenities.notIncluded,
           },
+          rules: {
+            list: data.rules,
+            expanded: data.rulesExpanded,
+          },
+          cancellations: {
+            strictness: data.cancellationIntensity,
+            policy: data.cancellationPolicy,
+          },
+
         }))
       .catch(err => console.log(err));
   }
@@ -78,10 +95,10 @@ class ProductDetails extends React.Component {
           <Amenities info={this.state.amenities} />
         </div>
         <div>
-          <Rules />
+          <Rules info={this.state.rules} />
         </div>
         <div>
-          <Cancellations />
+          <Cancellations info={this.state.cancellations} />
         </div>
       </div>
     );

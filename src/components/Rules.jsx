@@ -1,7 +1,8 @@
 import React from 'react';
+import { Panel } from 'react-bootstrap';
 import styles from '../../stylesheets/rules-style.css';
 
-const Rules = () => {
+const Rules = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
@@ -9,9 +10,20 @@ const Rules = () => {
       </div>
       <div className={styles.ruleContainer}>
         <div className={styles.list}>
-          <p className={styles.rule}> Don't ride the tauntauns </p>
-          <p className={styles.rule}> Don't sleep inside of the tauntauns </p>
-          <p className={styles.rule}> T-47 airspeeders are not toys! </p>
+        {props.info.list.map((rule) => (
+          <p className={styles.rule} key={rule}> {rule} </p>
+          ))
+        }
+          <Panel className={styles.panelContainer}>
+            <Panel.Toggle className={styles.panelTitle}> Read all rules </Panel.Toggle>
+            <Panel.Collapse>
+              <Panel.Body>
+                {props.info.expanded.map(rule => (
+                  <p>{rule}</p>
+                ))}
+              </Panel.Body>
+            </Panel.Collapse>
+          </Panel>
         </div>
       </div>
     </div>

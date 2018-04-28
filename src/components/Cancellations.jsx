@@ -1,7 +1,8 @@
 import React from 'react';
+import { Panel } from 'react-bootstrap';
 import styles from '../../stylesheets/cancellations-style.css';
 
-const Cancellations = () => {
+const Cancellations = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
@@ -9,8 +10,8 @@ const Cancellations = () => {
       </div>
       <div className={styles.textContainer}>
         <div>
-          <p className={styles.text}>Strict</p>
-          <p className={styles.text}>Cancel up to 7 days before check in and get a 50% refund (minus service fees). Cancel within 7 days of your trip and the reservation is non-refundable. Service fees are refunded when cancellation happens before check in and within 48 hours of booking.</p>
+          <p className={styles.text}> {props.info.strictness} </p>
+          <p className={styles.text}> {props.info.policy} </p>
         </div>
       </div>
     </div>

@@ -26,5 +26,16 @@
  }
 
  .rule {
-   margin-top: 6px;
+  margin-top: 6px;
+ }
+
+ .panelContainer {
+  border: 0px;
+  box-shadow: none;
+ }
+
+ .panelTitle {
+  color: #008489;
+  font-size: 17px;
+  font-weight: normal;
  }
