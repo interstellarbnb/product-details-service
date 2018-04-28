@@ -3,6 +3,7 @@ import axios from 'axios';
 import Brief from './components/Brief';
 import Summary from './components/Summary';
 import Amenities from './components/Amenities';
+import Rules from './components/Rules';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -29,7 +30,8 @@ class ProductDetails extends React.Component {
   getData(endpoint) {
     // Append id end of url to receive desired db entry
     // ID's range from 0 - 99
-    axios.get(`http://ec2-13-57-253-115.us-west-1.compute.amazonaws.com/${endpoint}/listing`)
+    // axios.get(`http://ec2-13-57-253-115.us-west-1.compute.amazonaws.com/${endpoint}/listing`)
+    axios.get(`http://127.0.0.1:8080/${endpoint}/listing`)
       .then(({ data, data: { host, summary, amenities } }) =>
         this.setState({
           brief: {
@@ -73,6 +75,9 @@ class ProductDetails extends React.Component {
         </div>
         <div>
           <Amenities info={this.state.amenities} />
+        </div>
+        <div>
+          <Rules />
         </div>
       </div>
     );

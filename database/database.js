@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 // docker run -d -p 8080:1337 -v $(pwd):/src/app --name listing_details_container listing_details
 const db = mongoose.connection;
 // When running locally:
-// mongoose.connect('mongodb://localhost/details');
+mongoose.connect('mongodb://localhost/details');
 // When dockerizing:
 // mongoose.connect('mongodb://172.17.0.2:27017/details');
 // When composing:
-mongoose.connect('mongodb://database/details');
+// mongoose.connect('mongodb://database/details');
 
 const listingSchema = mongoose.Schema({
   id: {
@@ -92,6 +92,13 @@ const hoth = new Listing({
 
     notes: 'Temperatures are subzero! Bring a coat',
   },
+  // amenities: {  // todo
+  //   basic: ,
+  //   dining: ,
+  //   bedBath: ,
+  //   facilities: ,
+  //   notIncluded: ,
+  // }
 });
 
 module.export = db;
