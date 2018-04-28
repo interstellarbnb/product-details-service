@@ -4,6 +4,7 @@ import Brief from './components/Brief';
 import Summary from './components/Summary';
 import Amenities from './components/Amenities';
 import Rules from './components/Rules';
+import Cancellations from './components/Cancellations';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -78,6 +79,9 @@ class ProductDetails extends React.Component {
         </div>
         <div>
           <Rules />
+        </div>
+        <div>
+          <Cancellations />
         </div>
       </div>
     );
