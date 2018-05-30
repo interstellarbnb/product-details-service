@@ -1,7 +1,7 @@
 # Interstellarbnb: Product details server
 
 > Service designed to display home listing details, host information, provided amenities, house rules, and cancellation policies.
-> ![gif of product!](https://i.imgur.com/yQKBzX0.gifv)
+> ![gif of product!](https://i.imgur.com/yQKBzX0.gif)
 
 ## Related Projects
 
