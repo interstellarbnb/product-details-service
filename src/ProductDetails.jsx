@@ -32,15 +32,16 @@ class ProductDetails extends React.Component {
 
   componentDidMount() {
     let endpoint = window.location.href.split('/')[3];
-    endpoint = endpoint || 1;
+    endpoint = endpoint || 0;
     this.getData(endpoint);
   }
 
   getData(endpoint) {
     // Append id end of url to receive desired db entry
     // ID's range from 0 - 99
-    // axios.get(`http://ec2-13-57-253-115.us-west-1.compute.amazonaws.com/${endpoint}/listing`)
-    axios.get(`http://127.0.0.1:8080/${endpoint}/listing`)
+    axios.get(`http://ec2-13-57-253-115.us-west-1.compute.amazonaws.com/${endpoint}/listing`)
+    // For local development
+    // axios.get(`http://127.0.0.1:8080/${endpoint}/listing`)
       .then(({ data, data: { host, summary, amenities } }) =>
         this.setState({
           brief: {

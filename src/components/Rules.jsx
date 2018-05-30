@@ -10,10 +10,9 @@ const Rules = (props) => {
       </div>
       <div className={styles.ruleContainer}>
         <div className={styles.list}>
-        {props.info.list.map((rule) => (
-          <p className={styles.rule} key={rule}> {rule} </p>
-          ))
-        }
+          {props.info.list.map(rule => (
+            <p className={styles.rule} key={rule}> {rule} </p>
+          ))}
           <Panel className={styles.panelContainer}>
             <Panel.Toggle className={styles.panelTitle}> Read all rules </Panel.Toggle>
             <Panel.Collapse>

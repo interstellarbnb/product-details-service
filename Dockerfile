@@ -15,8 +15,6 @@ RUN npm install
 
 RUN yarn install
 
-RUN npm run build
-
 # What port will the container talk to the outside world with once created?
 EXPOSE 8080
 

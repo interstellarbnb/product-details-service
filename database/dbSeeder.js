@@ -29,7 +29,7 @@ const generateAmenities = (arr) => {
 const generateNotIncluded = basics => _.difference(basicAmenities, basics);
 const generateRandomNumber = () => Math.floor(1 + (Math.random() * 6));
 
-let count = 1 ;
+let count = 2;
 let typeCount = 0;
 const createSeed = () => {
   const newSeed = {
@@ -76,7 +76,7 @@ const createSeed = () => {
 
 // best seed
 const hoth = new db.Listing({
-  id: 0,
+  id: 1,
   spaceType: 'Rebel Alliance Base',
   spaceTitle: 'Echo Base',
   spaceLoc: 'Hoth',
@@ -113,7 +113,7 @@ const hoth = new db.Listing({
     basic: ['Tauntaun rides', 'T-47-airspeeder tours', 'Full medical bay', 'Central heating'],
     dining: ['Full cafeteria', 'Blue milk', 'Wild mushrooms', 'Frogs', 'Bantha taretar', 'Pickled blackbeak egg'],
     bedBath: ['Individual cots'],
-    facilities: ['Protected by sentry outposts', 'Cave sprelunking', 'Restaurants & bars onsite'],
+    facilities: ['Protected by sentry outposts', 'Cave spelunking', 'Restaurants & bars onsite'],
     notIncluded: ['Temperatures above 0'],
   },
   rules: ['Wampa is not your friend!', 'No killing & sleeping inside tauntauns', 'T-47 airspeeders are not toys'],
