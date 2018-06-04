@@ -1,8 +1,8 @@
-# Interstellarbnb: Product details server
+# Interstellarbnb: Product details microservice
 
-> Service designed to display home listing details, host info, provided amenities, house rules, and cancellation policies.
+> Service designed to display home listing details, host info, provided amenities, house rules, and cancellation policies. GIF not factually accurate b/c we all know that Hoth isn't actually the desert planet of Tattoine. 
 >
-> ![gif of product!](https://i.imgur.com/yQKBzX0.gif)
+> ![awesome gif!](https://i.imgur.com/yQKBzX0.gif)
 
 ## Related Projects
 
@@ -17,3 +17,8 @@
 - Express
 - Mongodb
 - Redis
+
+### Deployed with 
+
+- Docker
+- AWS
